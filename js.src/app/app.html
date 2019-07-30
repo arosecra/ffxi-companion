@@ -1,0 +1,32 @@
+<nb-layout>
+
+    <nb-layout-header fixed>
+        <nb-action icon="menu-2-outline" style="padding-left: 20px; padding-right: 20px;" ></nb-action>
+        <span style="padding-left: 20px; padding-right: 20px;">{{title}}</span>    
+    </nb-layout-header>
+    <nb-sidebar>
+
+
+    </nb-sidebar>
+
+    <nb-layout-column>
+
+        <nb-card *ngFor="let characterName of characterNames()" accent="{{characters[characterName].hp.status}}">
+            <nb-card-header>{{characters[characterName].name}}</nb-card-header>
+            <nb-card-body>
+                HP: {{characters[characterName].hp.current}} / {{characters[characterName].hp.max}}
+            </nb-card-body>
+
+        </nb-card>
+
+
+        <router-outlet></router-outlet>
+
+    </nb-layout-column>
+
+
+    <nb-layout-footer fixed>
+        <!-- Insert footer here -->
+    </nb-layout-footer>
+
+</nb-layout>

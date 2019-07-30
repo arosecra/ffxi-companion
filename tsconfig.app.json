@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "include": [
+    "js.src/**/*.ts"
+  ],
+  "exclude": [
+    "js.src/test.ts",
+    "js.src/**/*.spec.ts"
+  ]
+}

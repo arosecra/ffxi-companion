@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);node_modules\**\*;src\**\*</DefaultItemExcludes>
+  </PropertyGroup>
+
+<ItemGroup>
+  <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+  <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+  <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+  <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="2.2.1" />
+  <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+  <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+  <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
+
+  <PackageReference Include="SharpDX.XInput" Version="4.2.0" />
+  <PackageReference Include="WinApi" Version="4.0.0" />
+  <Reference Include="Core_Interception">
+    <HintPath>lib\Core_Interception.dll</HintPath>
+  </Reference>
+  <Reference Include="HidSharp">
+    <HintPath>lib\HidSharp.dll</HintPath>
+  </Reference>
+  <Reference Include="IOWrapper.Libraries.DeviceLibrary">
+    <HintPath>lib\IOWrapper.Libraries.DeviceLIbrary.dll</HintPath>
+  </Reference>
+  <Reference Include="IOWrapper.Libraries.EmptyEventDictionary">
+    <HintPath>lib\IOWrapper.Libraries.EmptyEventDictionary.dll</HintPath>
+  </Reference>
+  <Reference Include="IOWrapper.Libraries.HidDeviceHelper">
+    <HintPath>lib\IOWrapper.Libraries.HidDeviceHelper.dll</HintPath>
+  </Reference>
+  <Reference Include="IOWrapper.Libraries.PollingDeviceHandler">
+    <HintPath>lib\IOWrapper.Libraries.PollingDeviceHandler.dll</HintPath>
+  </Reference>
+  <Reference Include="IOWrapper.Libraries.ProviderLogger">
+    <HintPath>lib\IOWrapper.Libraries.ProviderLogger.dll</HintPath>
+  </Reference>
+  <Reference Include="IOWrapper.Libraries.SubscriptionHandlers">
+    <HintPath>lib\IOWrapper.Libraries.SubscriptionHandlers.dll</HintPath>
+  </Reference>
+</ItemGroup>
+
+<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+  <Copy SourceFiles="lib\interception.dll" DestinationFolder="$(OutDir)" />
+  <Copy SourceFiles="CompanionSettings.xml" DestinationFolder="$(OutDir)" />
+</Target>
+
+<Target Name="MyPreCompileTarget" BeforeTargets="Build">
+  <Exec Command="ng build" />
+</Target>
+
+</Project>
