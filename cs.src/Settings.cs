@@ -203,5 +203,8 @@ namespace FFXICompanion.Settings {
         NumpadEnter = 28,
         NumpadPlus = 78,
         NumpadMinus = 74,
+
+        LOGI_MENU = 221,
+        LOGI_WIN = 219
     }
 }

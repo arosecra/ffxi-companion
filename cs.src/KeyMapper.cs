@@ -34,7 +34,6 @@ namespace FFXICompanion.KeyMapper
             // ManagedWrapper.Send(_deviceContext, devId, ref stroke, 1);
 
             //use this code to determine keys
-            // Console.WriteLine("Hello World!");
             // ManagedWrapper.SetFilter(deviceContext, ManagedWrapper.IsKeyboard, ManagedWrapper.Filter.All);
             // var stroke = new ManagedWrapper.Stroke();
             // int device = 0;
@@ -137,6 +136,7 @@ namespace FFXICompanion.KeyMapper
                     int devId = 1;
                     // Console.WriteLine(stroke.key.code);
                     ManagedWrapper.Send(deviceContext, devId, ref stroke, 1);
+                    System.Threading.Thread.Sleep(50);
                 }
             } else if (mapping.altTabCommand != null) {
 
@@ -253,20 +253,20 @@ namespace FFXICompanion.KeyMapper
         private Dictionary<Button, bool> determineSimpleButtonState(SharpDX.XInput.State controllerState)
         {
             Dictionary<Button, bool> result = new Dictionary<Button, bool>();
-            setButtonState(result, Button.LB, controllerState.Gamepad.Buttons == GamepadButtonFlags.LeftShoulder);
-            setButtonState(result, Button.RB, controllerState.Gamepad.Buttons == GamepadButtonFlags.RightShoulder);
-            setButtonState(result, Button.X, controllerState.Gamepad.Buttons == GamepadButtonFlags.X);
-            setButtonState(result, Button.Y, controllerState.Gamepad.Buttons == GamepadButtonFlags.Y);
-            setButtonState(result, Button.A, controllerState.Gamepad.Buttons == GamepadButtonFlags.A);
-            setButtonState(result, Button.B, controllerState.Gamepad.Buttons == GamepadButtonFlags.B);
-            setButtonState(result, Button.LS, controllerState.Gamepad.Buttons == GamepadButtonFlags.LeftThumb);
-            setButtonState(result, Button.RS, controllerState.Gamepad.Buttons == GamepadButtonFlags.RightThumb);
-            setButtonState(result, Button.DU, controllerState.Gamepad.Buttons == GamepadButtonFlags.DPadUp);
-            setButtonState(result, Button.DD, controllerState.Gamepad.Buttons == GamepadButtonFlags.DPadDown);
-            setButtonState(result, Button.DL, controllerState.Gamepad.Buttons == GamepadButtonFlags.DPadLeft);
-            setButtonState(result, Button.DR, controllerState.Gamepad.Buttons == GamepadButtonFlags.DPadRight);
-            setButtonState(result, Button.START, controllerState.Gamepad.Buttons == GamepadButtonFlags.Start);
-            setButtonState(result, Button.BACK, controllerState.Gamepad.Buttons == GamepadButtonFlags.Back);
+            setButtonState(result, Button.LB,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.LeftShoulder) != 0);
+            setButtonState(result, Button.RB,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.RightShoulder) != 0);
+            setButtonState(result, Button.X,     (controllerState.Gamepad.Buttons & GamepadButtonFlags.X) != 0);
+            setButtonState(result, Button.Y,     (controllerState.Gamepad.Buttons & GamepadButtonFlags.Y) != 0);
+            setButtonState(result, Button.A,     (controllerState.Gamepad.Buttons & GamepadButtonFlags.A) != 0);
+            setButtonState(result, Button.B,     (controllerState.Gamepad.Buttons & GamepadButtonFlags.B) != 0);
+            setButtonState(result, Button.LS,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.LeftThumb) != 0);
+            setButtonState(result, Button.RS,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.RightThumb) != 0);
+            setButtonState(result, Button.DU,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.DPadUp) != 0);
+            setButtonState(result, Button.DD,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.DPadDown) != 0);
+            setButtonState(result, Button.DL,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.DPadLeft) != 0);
+            setButtonState(result, Button.DR,    (controllerState.Gamepad.Buttons & GamepadButtonFlags.DPadRight) != 0);
+            setButtonState(result, Button.START, (controllerState.Gamepad.Buttons & GamepadButtonFlags.Start) != 0);
+            setButtonState(result, Button.BACK,  (controllerState.Gamepad.Buttons & GamepadButtonFlags.Back) != 0);
 
             setJoystickButtonState(result, "LS", "L", "R", (float)controllerState.Gamepad.LeftThumbX, LDEADZONEX);
             setJoystickButtonState(result, "LS", "D", "U", (float)controllerState.Gamepad.LeftThumbY, LDEADZONEY);
