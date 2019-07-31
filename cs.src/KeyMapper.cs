@@ -85,7 +85,7 @@ namespace FFXICompanion.KeyMapper
 
                         Dictionary<Button, bool> simpleGamepadState = determineSimpleButtonState(controllerState);
                         Dictionary<Button, Settings.Action> changedState = determineStateDifferences(lastSimpleGamepadState, simpleGamepadState);
-                        printStateChanges(changedState);
+                        // printStateChanges(changedState);
 
                         //determine if we are transitioning to a new 'state'
                         //  this is based on the current state, the game state and the keys pressed/not pressed
@@ -340,7 +340,7 @@ namespace FFXICompanion.KeyMapper
                 }
                 if(matchedButtons == stateTransition.transitionButtons.Count) {
                     result = stateTransition.stateName;
-                    Console.WriteLine("Changing state to " + result);
+                    // Console.WriteLine("Changing state to " + result);
                     break;
                 }
             }
