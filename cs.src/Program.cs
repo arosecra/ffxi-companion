@@ -4,7 +4,7 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-
+using System.Collections.Concurrent;
 
 using FFXICompanion.KeyMapper;
 using FFXICompanion.Settings;
@@ -97,6 +97,26 @@ namespace FFXICompanion
             addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.Y,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad6);
             addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.A,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad7);
             addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.B,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad8);
+            
+            //left stick
+            addButtonToKeyPressMapping(macroState1, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState1, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState1, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState1, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
+
+            //right stick
+            addButtonToKeyPressMapping(macroState1, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState1, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState1, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState1, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState1, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
 
             settings.stateMappings.Add(macroState1);
 
@@ -111,6 +131,26 @@ namespace FFXICompanion
             addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.Y,  Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad6);
             addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.A,  Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad7);
             addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.B,  Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad8);
+            
+            //left stick
+            addButtonToKeyPressMapping(macroState2, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState2, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState2, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState2, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
+
+            //right stick
+            addButtonToKeyPressMapping(macroState2, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState2, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState2, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState2, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState2, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
 
             settings.stateMappings.Add(macroState2);
 
@@ -125,6 +165,26 @@ namespace FFXICompanion
             addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.Y,  Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad6);
             addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.A,  Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad7);
             addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.B,  Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad8);
+            
+            //left stick
+            addButtonToKeyPressMapping(macroState3, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState3, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState3, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState3, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
+
+            //right stick
+            addButtonToKeyPressMapping(macroState3, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState3, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState3, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState3, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState3, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
 
             settings.stateMappings.Add(macroState3);
 
@@ -139,22 +199,44 @@ namespace FFXICompanion
             addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.Y,  Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad6);
             addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.A,  Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad7);
             addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.B,  Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad8);
+            
+            //left stick
+            addButtonToKeyPressMapping(macroState4, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState4, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState4, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState4, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
+
+            //right stick
+            addButtonToKeyPressMapping(macroState4, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState4, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState4, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState4, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState4, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
 
             settings.stateMappings.Add(macroState4);
 
             writeSettings(settings);
 
             CancellationTokenSource cts = new CancellationTokenSource();
-            ModuleData md = new ModuleData();
+            ModuleData md = ModuleData.getInstance();
             md.companionSettings = settings;
             md.cancellationToken = cts.Token;
 
-            Mapper keyMapper = new Mapper(md);
-            FFXICompanion.Server.HttpServer srvr = new FFXICompanion.Server.HttpServer(md);
+            Mapper keyMapper = new Mapper();
+            FFXICompanion.Server.HttpServer srvr = new FFXICompanion.Server.HttpServer();
+            FFXICompanion.Server.SocketServer sock = new FFXICompanion.Server.SocketServer();
 
             List<Thread> threads = new List<Thread>();
             threads.Add(new Thread(new ThreadStart(keyMapper.start)));
-            // threads.Add(new Thread(new ThreadStart(srvr.start)));
+            threads.Add(new Thread(new ThreadStart(srvr.start)));
+            threads.Add(new Thread(new ThreadStart(sock.start)));
 
             foreach(Thread thread in threads) {
                 thread.Start();
@@ -257,14 +339,22 @@ namespace FFXICompanion
         }
     }
 
-    // public interface Module {
-
-    // }
+    
 
     public class ModuleData {
+        private static readonly ModuleData instance = new ModuleData();
+
+        static ModuleData() {}
+        private ModuleData() {}
+
+        public static ModuleData getInstance() { return instance; }
+
         public CompanionSettings companionSettings {get; set;}
         public CancellationToken cancellationToken {get; set;}
 
+        public Dictionary<string, FFXICompanion.Game.Character> party = new Dictionary<string, FFXICompanion.Game.Character>();
+
+        public Mutex mut = new Mutex();
     }
 
 

@@ -13,15 +13,13 @@ namespace FFXICompanion.KeyMapper
 
     public class Mapper
     {
-        static float LDEADZONEX = short.MaxValue * .1f;
-        static float LDEADZONEY = short.MaxValue * .1f;
-        static float RDEADZONEX = short.MaxValue * .1f;
-        static float RDEADZONEY = short.MaxValue * .1f;
-        private ModuleData moduleData;
+        static float LDEADZONEX = short.MaxValue * .3f;
+        static float LDEADZONEY = short.MaxValue * .3f;
+        static float RDEADZONEX = short.MaxValue * .3f;
+        static float RDEADZONEY = short.MaxValue * .3f;
         private IntPtr deviceContext;
-        public Mapper(ModuleData moduleData)
+        public Mapper()
         {
-            this.moduleData = moduleData;
             this.deviceContext = ManagedWrapper.CreateContext();
         }
 
@@ -75,7 +73,7 @@ namespace FFXICompanion.KeyMapper
                 SharpDX.XInput.State previousControllerState = controller.GetState();
                 Dictionary<Button, bool> lastSimpleGamepadState = determineSimpleButtonState(previousControllerState);
 
-                while (!moduleData.cancellationToken.IsCancellationRequested)
+                while (!ModuleData.getInstance().cancellationToken.IsCancellationRequested)
                 {
                     if(controller.IsConnected) {
                     SharpDX.XInput.State controllerState = controller.GetState();
@@ -90,11 +88,11 @@ namespace FFXICompanion.KeyMapper
                         //determine if we are transitioning to a new 'state'
                         //  this is based on the current state, the game state and the keys pressed/not pressed
                         //  NOTE: the first state wins, for speed
-                        string newState = getNewStateName(simpleGamepadState, moduleData.companionSettings.stateTransitions);
+                        string newState = getNewStateName(simpleGamepadState, ModuleData.getInstance().companionSettings.stateTransitions);
 
 
                         //now that we have the state name determined, load the correct mappings
-                        StateControllerMapping stateControllerMappings = findStateControllerMappings(newState, moduleData.companionSettings.stateMappings);
+                        StateControllerMapping stateControllerMappings = findStateControllerMappings(newState, ModuleData.getInstance().companionSettings.stateMappings);
 
                         //apply button presses and such 
                         foreach (Button key in changedState.Keys)
@@ -141,63 +139,63 @@ namespace FFXICompanion.KeyMapper
             } else if (mapping.altTabCommand != null) {
 
                 
-                List<Process> polProcesses = new List<Process>();
-                foreach (Process process in Process.GetProcesses())
-                {
-                    if(process.ProcessName == "pol") {
-                        polProcesses.Add(process);
-                    }
-                }
+                // List<Process> polProcesses = new List<Process>();
+                // foreach (Process process in Process.GetProcesses())
+                // {
+                //     if(process.ProcessName == "pol") {
+                //         polProcesses.Add(process);
+                //     }
+                // }
 
-                IntPtr activeWindow = WinApi.User32.User32Methods.GetForegroundWindow();
-                int currentIndex = -1;
-                for(int i = 0; i < polProcesses.Count; i++) {
-                    Process p = polProcesses[i];
-                    if(p.Handle == activeWindow) {
-                        currentIndex = i;
-                    }
-                }
-                currentIndex++;
-                Console.WriteLine(currentIndex);
-                currentIndex %= polProcesses.Count;
-                Console.WriteLine(currentIndex);
+                // IntPtr activeWindow = WinApi.User32.User32Methods.GetForegroundWindow();
+                // int currentIndex = -1;
+                // for(int i = 0; i < polProcesses.Count; i++) {
+                //     Process p = polProcesses[i];
+                //     if(p.Handle == activeWindow) {
+                //         currentIndex = i;
+                //     }
+                // }
+                // currentIndex++;
+                // Console.WriteLine(currentIndex);
+                // currentIndex %= polProcesses.Count;
+                // Console.WriteLine(currentIndex);
 
-                // IntPtr s = process.MainWindowHandle;
-                // SetForegroundWindow(s);
-                // WinApi.User32.User32Methods.BringWindowToTop(polProcesses[currentIndex].Handle);
-                IntPtr newActiveWindow = polProcesses[currentIndex].Handle;
+                // // IntPtr s = process.MainWindowHandle;
+                // // SetForegroundWindow(s);
+                // // WinApi.User32.User32Methods.BringWindowToTop(polProcesses[currentIndex].Handle);
+                // IntPtr newActiveWindow = polProcesses[currentIndex].Handle;
                 
-                if (newActiveWindow != activeWindow) {
-                    uint thread1 = WinApi.User32.User32Methods.GetWindowThreadProcessId(activeWindow, IntPtr.Zero);
-                    uint thread2 = WinApi.Kernel32.Kernel32Methods.GetCurrentThreadId();
+                // if (newActiveWindow != activeWindow) {
+                //     uint thread1 = WinApi.User32.User32Methods.GetWindowThreadProcessId(activeWindow, IntPtr.Zero);
+                //     uint thread2 = WinApi.Kernel32.Kernel32Methods.GetCurrentThreadId();
 
-                    if (thread1 != thread2)
-                    {
-                        bool attachThread = WinApi.User32.User32Methods.AttachThreadInput(thread1, thread2, true);
-                        bool bringToTop = WinApi.User32.User32Methods.BringWindowToTop(newActiveWindow);
-                        if (WinApi.User32.User32Methods.IsIconic(newActiveWindow))
-                        {
-                            bool showWindow = WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOWNORMAL);
-                        }
-                        else
-                        {
-                            bool showWindow = WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOW);
-                        }
-                        attachThread = WinApi.User32.User32Methods.AttachThreadInput(thread1, thread2, false);
-                    }
-                    else
-                    {
-                        WinApi.User32.User32Methods.SetForegroundWindow(newActiveWindow);
-                    }
-                    if (WinApi.User32.User32Methods.IsIconic(newActiveWindow))
-                    {
-                        WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOWNORMAL);
-                    }
-                    else
-                    {
-                        WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOW);
-                    }
-                }
+                //     if (thread1 != thread2)
+                //     {
+                //         bool attachThread = WinApi.User32.User32Methods.AttachThreadInput(thread1, thread2, true);
+                //         bool bringToTop = WinApi.User32.User32Methods.BringWindowToTop(newActiveWindow);
+                //         if (WinApi.User32.User32Methods.IsIconic(newActiveWindow))
+                //         {
+                //             bool showWindow = WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOWNORMAL);
+                //         }
+                //         else
+                //         {
+                //             bool showWindow = WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOW);
+                //         }
+                //         attachThread = WinApi.User32.User32Methods.AttachThreadInput(thread1, thread2, false);
+                //     }
+                //     else
+                //     {
+                //         WinApi.User32.User32Methods.SetForegroundWindow(newActiveWindow);
+                //     }
+                //     if (WinApi.User32.User32Methods.IsIconic(newActiveWindow))
+                //     {
+                //         WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOWNORMAL);
+                //     }
+                //     else
+                //     {
+                //         WinApi.User32.User32Methods.ShowWindow(newActiveWindow, WinApi.User32.ShowWindowCommands.SW_SHOW);
+                //     }
+                // }
 
             }
         }

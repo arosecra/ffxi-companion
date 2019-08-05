@@ -11,10 +11,38 @@
 
     <nb-layout-column>
 
-        <nb-card *ngFor="let characterName of characterNames()" accent="{{characters[characterName].hp.status}}">
-            <nb-card-header>{{characters[characterName].name}}</nb-card-header>
+        <nb-card *ngFor="let characterName of characterNames()" [accent]="getAccent(characters[characterName].hpp)">
+            <nb-card-header>{{characterName}}</nb-card-header>
             <nb-card-body>
-                HP: {{characters[characterName].hp.current}} / {{characters[characterName].hp.max}}
+                <table>
+                    <tr>
+                        <td>HP: {{characters[characterName].hpp}}</td>
+                        <td><progress 
+                            max="100" 
+                            value="{{characters[characterName].hpp}}"
+                            >
+                        </progress></td>
+                    </tr>
+
+                    <tr>
+                        <td>MP: {{characters[characterName].mpp}}</td>
+                        <td><progress 
+                            max="100" 
+                            value="{{characters[characterName].mpp}}"
+                            >
+                        </progress></td>
+                    </tr>
+
+                        
+                    <tr>
+                        <td>TP: {{characters[characterName].tp}}</td>
+                        <td><progress 
+                            max="100" 
+                            value="{{characters[characterName].tp}}"
+                            >
+                        </progress></td>
+                    </tr>
+                </table>
             </nb-card-body>
 
         </nb-card>
