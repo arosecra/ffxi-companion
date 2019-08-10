@@ -14,9 +14,39 @@ using System.Text;
 using Newtonsoft.Json;
 using FFXICompanion.Game;
 using System.Collections.Generic;
+using System.IO.Pipes;
 
 namespace FFXICompanion.Server
 {
+
+    public class NamedPipeServer 
+    {
+
+        public void start()
+        {
+            Console.WriteLine("Named Pipe Server loaded");
+            while(!ModuleData.getInstance().cancellationToken.IsCancellationRequested) {
+                NamedPipeServerStream pipeServer =
+                        new NamedPipeServerStream("testpipe", PipeDirection.In, 100, PipeTransmissionMode.Message);
+                // ModuleData.getInstance().cancellationToken.Register(() => pipeServer.EndWaitForConnection);
+                pipeServer.WaitForConnection();
+                StreamReader reader = new StreamReader(pipeServer);
+                string data = reader.ReadToEnd();
+                Console.WriteLine(data);
+                pipeServer.Disconnect();
+
+                List<Character> party = JsonConvert.DeserializeObject<List<Character>>(data);
+
+                ModuleData.getInstance().mut.WaitOne();
+                foreach (Character character in party) {
+                    ModuleData.getInstance().party[character.name] = character;
+                }
+                ModuleData.getInstance().mut.ReleaseMutex();
+            }
+
+            
+        }
+    }
 
     public class SocketServer
     {
@@ -125,8 +155,8 @@ namespace FFXICompanion.Server
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
-            loggerFactory.AddDebug();
+            // loggerFactory.AddConsole();
+            // loggerFactory.AddDebug();
 
             app.UseStaticFiles();
             app.UseDefaultFiles();

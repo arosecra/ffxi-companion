@@ -446,6 +446,118 @@
             </keyPresses>
           </keyPressesCommand>
         </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
       </controllerMappings>
       <stateName>Default</stateName>
     </StateControllerMapping>
@@ -608,19 +720,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>End</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>End</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -634,19 +738,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Down</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Down</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -660,19 +756,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>PageDown</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>PageDown</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -686,19 +774,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Left</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Left</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -712,19 +792,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Numpad5</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Numpad5</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -738,19 +810,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Right</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Right</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -764,19 +828,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Home</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Home</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -790,19 +846,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>RightAlt</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Up</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Up</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>RightAlt</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1027,6 +1075,118 @@
             <keyPresses>
               <KeyPress>
                 <key>L</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1045,19 +1205,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>End</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>End</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1071,19 +1223,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Down</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Down</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1097,19 +1241,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>PageDown</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>PageDown</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1123,19 +1259,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Left</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Left</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1149,19 +1277,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Numpad5</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Numpad5</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1175,19 +1295,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Right</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Right</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1201,19 +1313,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Home</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Home</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1227,19 +1331,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_WIN</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Up</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Up</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_WIN</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1464,6 +1560,118 @@
             <keyPresses>
               <KeyPress>
                 <key>L</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1482,19 +1690,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>End</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>End</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1508,19 +1708,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Down</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Down</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1534,19 +1726,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>PageDown</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>PageDown</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1560,19 +1744,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Left</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Left</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1586,19 +1762,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Numpad5</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Numpad5</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1612,19 +1780,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Right</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Right</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1638,19 +1798,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Home</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Home</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1664,19 +1816,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>Control</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Up</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Up</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>Control</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1901,6 +2045,118 @@
             <keyPresses>
               <KeyPress>
                 <key>L</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1919,19 +2175,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>End</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>End</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1945,19 +2193,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Down</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Down</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1971,19 +2211,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>PageDown</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>PageDown</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1997,19 +2229,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Left</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Left</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -2023,19 +2247,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Numpad5</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Numpad5</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -2049,19 +2265,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Right</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Right</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -2075,19 +2283,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Home</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Home</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -2101,19 +2301,11 @@
           <keyPressesCommand>
             <keyPresses>
               <KeyPress>
-                <key>LOGI_MENU</key>
-                <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
                 <key>Up</key>
                 <action>PRESSED</action>
               </KeyPress>
               <KeyPress>
                 <key>Up</key>
-                <action>RELEASED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -2338,6 +2530,118 @@
             <keyPresses>
               <KeyPress>
                 <key>L</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>

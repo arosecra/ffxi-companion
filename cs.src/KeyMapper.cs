@@ -83,7 +83,7 @@ namespace FFXICompanion.KeyMapper
 
                         Dictionary<Button, bool> simpleGamepadState = determineSimpleButtonState(controllerState);
                         Dictionary<Button, Settings.Action> changedState = determineStateDifferences(lastSimpleGamepadState, simpleGamepadState);
-                        // printStateChanges(changedState);
+                        printStateChanges(changedState);
 
                         //determine if we are transitioning to a new 'state'
                         //  this is based on the current state, the game state and the keys pressed/not pressed
@@ -132,7 +132,7 @@ namespace FFXICompanion.KeyMapper
                     else
                         stroke.key.state = (ushort)ManagedWrapper.KeyState.Up;
                     int devId = 1;
-                    // Console.WriteLine(stroke.key.code);
+                    Console.WriteLine(stroke.key.code);
                     ManagedWrapper.Send(deviceContext, devId, ref stroke, 1);
                     System.Threading.Thread.Sleep(50);
                 }
