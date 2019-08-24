@@ -48,7 +48,6 @@ namespace FFXICompanion
             addButtonToOneKeyPressAndReleaseMapping(defaultStateCM, Button.DU, Settings.Action.PRESSED, Settings.Key.N);
             addButtonToOneKeyPressAndReleaseMapping(defaultStateCM, Button.DD, Settings.Action.PRESSED, Settings.Key.M);
             
-
             //left stick
             addButtonToKeyPressMapping(defaultStateCM, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
             addButtonToKeyPressMapping(defaultStateCM, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
@@ -58,6 +57,9 @@ namespace FFXICompanion
             addButtonToKeyPressMapping(defaultStateCM, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
             addButtonToKeyPressMapping(defaultStateCM, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
             addButtonToKeyPressMapping(defaultStateCM, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
+            
+            addButtonToKeyPressMapping(defaultStateCM, Button.LS, Settings.Action.PRESSED,  Settings.Key.R, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(defaultStateCM, Button.LS, Settings.Action.RELEASED, Settings.Key.R, Settings.Action.RELEASED);
 
             //right stick
             addButtonToKeyPressMapping(defaultStateCM, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
@@ -108,8 +110,8 @@ namespace FFXICompanion
             // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.B,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad8);
             addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DL, Settings.Action.PRESSED, Settings.Key.Numpad1);
             addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DU, Settings.Action.PRESSED, Settings.Key.Numpad2);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DR, Settings.Action.PRESSED, Settings.Key.Numpad3);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DD, Settings.Action.PRESSED, Settings.Key.Numpad4);
+            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DD, Settings.Action.PRESSED, Settings.Key.Numpad3);
+            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DR, Settings.Action.PRESSED, Settings.Key.Numpad4);
             addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.X,  Settings.Action.PRESSED, Settings.Key.Numpad5);
             addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.Y,  Settings.Action.PRESSED, Settings.Key.Numpad6);
             addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.A,  Settings.Action.PRESSED, Settings.Key.Numpad7);

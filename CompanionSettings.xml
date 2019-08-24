@@ -336,6 +336,34 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>LS</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>R</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LS</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>R</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>RSU</button>
             <action>PRESSED</action>
           </button>
@@ -750,7 +778,7 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
-            <button>DR</button>
+            <button>DD</button>
             <action>PRESSED</action>
           </button>
           <keyPressesCommand>
@@ -768,7 +796,7 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
-            <button>DD</button>
+            <button>DR</button>
             <action>PRESSED</action>
           </button>
           <keyPressesCommand>
