@@ -20,6 +20,9 @@
     <State>
       <name>Macro State 4</name>
     </State>
+    <State>
+      <name>Macro State 4</name>
+    </State>
   </states>
   <stateTransitions>
     <StateTransition>
@@ -66,6 +69,15 @@
         </ControllerButton>
       </transitionButtons>
       <stateName>Macro State 4</stateName>
+    </StateTransition>
+    <StateTransition>
+      <transitionButtons>
+        <ControllerButton>
+          <button>GUIDE</button>
+          <action>PRESSED</action>
+        </ControllerButton>
+      </transitionButtons>
+      <stateName>Macro State 5</stateName>
     </StateTransition>
   </stateTransitions>
   <stateMappings>
@@ -532,6 +544,20 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>GUIDE</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LB</button>
             <action>RELEASED</action>
           </button>
@@ -581,6 +607,20 @@
             <keyPresses>
               <KeyPress>
                 <key>LOGI_MENU</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>GUIDE</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -886,6 +926,42 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>BACK</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>START</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Insert</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Insert</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LSU</button>
             <action>PRESSED</action>
           </button>
@@ -1166,6 +1242,20 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>GUIDE</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LB</button>
             <action>RELEASED</action>
           </button>
@@ -1215,6 +1305,20 @@
             <keyPresses>
               <KeyPress>
                 <key>LOGI_MENU</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>GUIDE</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1371,6 +1475,42 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>BACK</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>START</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Insert</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Insert</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LSU</button>
             <action>PRESSED</action>
           </button>
@@ -1651,6 +1791,20 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>GUIDE</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LB</button>
             <action>RELEASED</action>
           </button>
@@ -1700,6 +1854,20 @@
             <keyPresses>
               <KeyPress>
                 <key>LOGI_MENU</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>GUIDE</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -1856,6 +2024,42 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>BACK</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>START</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Insert</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Insert</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LSU</button>
             <action>PRESSED</action>
           </button>
@@ -2136,6 +2340,20 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>GUIDE</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LB</button>
             <action>RELEASED</action>
           </button>
@@ -2185,6 +2403,20 @@
             <keyPresses>
               <KeyPress>
                 <key>LOGI_MENU</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>GUIDE</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -2341,6 +2573,42 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>BACK</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>START</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Insert</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Insert</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LSU</button>
             <action>PRESSED</action>
           </button>
@@ -2621,6 +2889,20 @@
         </ControllerMapping>
         <ControllerMapping>
           <button>
+            <button>GUIDE</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
             <button>LB</button>
             <action>RELEASED</action>
           </button>
@@ -2670,6 +2952,20 @@
             <keyPresses>
               <KeyPress>
                 <key>LOGI_MENU</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>GUIDE</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
                 <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
@@ -2677,6 +2973,555 @@
         </ControllerMapping>
       </controllerMappings>
       <stateName>Macro State 4</stateName>
+    </StateControllerMapping>
+    <StateControllerMapping>
+      <controllerMappings>
+        <ControllerMapping>
+          <button>
+            <button>DL</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>End</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>End</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>DU</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Down</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Down</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>DD</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>PageDown</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>PageDown</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>DR</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Left</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Left</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>X</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Numpad5</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Numpad5</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>Y</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Right</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Right</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>A</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Home</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Home</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>B</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Up</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Up</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>BACK</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>PageUp</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>START</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Insert</key>
+                <action>PRESSED</action>
+              </KeyPress>
+              <KeyPress>
+                <key>Insert</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSU</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>W</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSU</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>W</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSL</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>A</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSL</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>A</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSD</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>S</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSD</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>S</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSR</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>D</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LSR</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>D</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSU</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>I</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSU</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>I</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSL</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>J</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSL</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>J</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSD</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>K</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSD</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>K</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSR</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>L</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RSR</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>L</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>GUIDE</button>
+            <action>PRESSED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
+                <action>PRESSED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>RightAlt</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>LT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_WIN</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RB</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>Control</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>RT</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LOGI_MENU</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>GUIDE</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>LeftShift</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+      </controllerMappings>
+      <stateName>Macro State 5</stateName>
     </StateControllerMapping>
   </stateMappings>
 </CompanionSettings>

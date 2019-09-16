@@ -99,6 +99,7 @@ namespace FFXICompanion.Settings {
         LSU,LSD,LSL,LSR,
         RSU,RSD,RSL,RSR,
         START,BACK,
+        GUIDE,
     }
 
    public enum Key : ushort

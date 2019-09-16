@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Core_Interception.Lib;
 using SharpDX.XInput;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace FFXICompanion.KeyMapper
 {
@@ -132,9 +133,9 @@ namespace FFXICompanion.KeyMapper
                     else
                         stroke.key.state = (ushort)ManagedWrapper.KeyState.Up;
                     int devId = 1;
-                    Console.WriteLine(stroke.key.code);
+                    Console.WriteLine(stroke.key.code + " " + kp.action);
                     ManagedWrapper.Send(deviceContext, devId, ref stroke, 1);
-                    System.Threading.Thread.Sleep(50);
+                    System.Threading.Thread.Sleep(10);
                 }
             } else if (mapping.altTabCommand != null) {
 
@@ -248,6 +249,23 @@ namespace FFXICompanion.KeyMapper
             return result;
         }
 
+        [DllImport("xinput1_3.dll", EntryPoint = "#100")]
+        static extern int secret_get_gamepad(int playerIndex, out XINPUT_GAMEPAD_SECRET struc);
+
+        public struct XINPUT_GAMEPAD_SECRET
+        {
+                public UInt32 eventCount;
+                public ushort wButtons;
+                public Byte bLeftTrigger;
+                public Byte bRightTrigger;
+                public short sThumbLX;
+                public short sThumbLY;
+                public short sThumbRX;
+                public short sThumbRY;
+        }
+        public XINPUT_GAMEPAD_SECRET xgs;
+
+
         private Dictionary<Button, bool> determineSimpleButtonState(SharpDX.XInput.State controllerState)
         {
             Dictionary<Button, bool> result = new Dictionary<Button, bool>();
@@ -273,6 +291,12 @@ namespace FFXICompanion.KeyMapper
 
             setTriggerButtonState(result, Button.LT, (float)controllerState.Gamepad.LeftTrigger);
             setTriggerButtonState(result, Button.RT, (float)controllerState.Gamepad.RightTrigger);
+
+            int stat = secret_get_gamepad(0, out xgs);
+            if (stat == 0) {
+                bool value = ((xgs.wButtons & 0x0400) != 0);
+                setButtonState(result, Button.GUIDE, value);
+            }
 
             return result;
         }

@@ -24,12 +24,14 @@ namespace FFXICompanion
             settings.states.Add(new State("Macro State 2", null));
             settings.states.Add(new State("Macro State 3", null));
             settings.states.Add(new State("Macro State 4", null));
+            settings.states.Add(new State("Macro State 4", null));
             
             addStateTransition(settings, "Macro Type State", Button.BACK, Settings.Action.PRESSED);
             addStateTransition(settings, "Macro State 1", Button.LB, Settings.Action.PRESSED);
             addStateTransition(settings, "Macro State 2", Button.LT, Settings.Action.PRESSED);
             addStateTransition(settings, "Macro State 3", Button.RB, Settings.Action.PRESSED);
             addStateTransition(settings, "Macro State 4", Button.RT, Settings.Action.PRESSED);
+            addStateTransition(settings, "Macro State 5", Button.GUIDE, Settings.Action.PRESSED);
 
             StateControllerMapping defaultStateCM = new StateControllerMapping();
             defaultStateCM.stateName = "Default";
@@ -75,10 +77,12 @@ namespace FFXICompanion
             addButtonToKeyPressMapping(defaultStateCM, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
             addButtonToKeyPressMapping(defaultStateCM, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
             addButtonToKeyPressMapping(defaultStateCM, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(defaultStateCM, Button.GUIDE, Settings.Action.PRESSED, Settings.Key.LeftShift, Settings.Action.PRESSED);
             addButtonToKeyPressMapping(defaultStateCM, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
             addButtonToKeyPressMapping(defaultStateCM, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
             addButtonToKeyPressMapping(defaultStateCM, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
             addButtonToKeyPressMapping(defaultStateCM, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.GUIDE, Settings.Action.RELEASED, Settings.Key.LeftShift, Settings.Action.RELEASED);
 
             settings.stateMappings.Add(defaultStateCM);
 
@@ -97,209 +101,11 @@ namespace FFXICompanion
 
             settings.stateMappings.Add(macroTypeStateCM);
 
-            StateControllerMapping macroState1 = new StateControllerMapping();
-            macroState1.stateName = "Macro State 1";
-
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.DL, Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad1);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.DU, Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad2);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.DR, Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad3);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.DD, Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad4);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.X,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad5);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.Y,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad6);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.A,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad7);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState1, Button.B,  Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Key.Numpad8);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DL, Settings.Action.PRESSED, Settings.Key.Numpad1);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DU, Settings.Action.PRESSED, Settings.Key.Numpad2);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DD, Settings.Action.PRESSED, Settings.Key.Numpad3);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.DR, Settings.Action.PRESSED, Settings.Key.Numpad4);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.X,  Settings.Action.PRESSED, Settings.Key.Numpad5);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.Y,  Settings.Action.PRESSED, Settings.Key.Numpad6);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.A,  Settings.Action.PRESSED, Settings.Key.Numpad7);
-            addButtonToOneKeyPressAndReleaseMapping(macroState1, Button.B,  Settings.Action.PRESSED, Settings.Key.Numpad8);
-            
-            //left stick
-            addButtonToKeyPressMapping(macroState1, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
-
-            //right stick
-            addButtonToKeyPressMapping(macroState1, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
-
-            addButtonToKeyPressMapping(macroState1, Button.LB, Settings.Action.PRESSED, Settings.Key.RightAlt  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState1, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState1, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
-
-            settings.stateMappings.Add(macroState1);
-
-            StateControllerMapping macroState2 = new StateControllerMapping();
-            macroState2.stateName = "Macro State 2";
-
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.DL, Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad1);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.DU, Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad2);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.DD, Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad3);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.DR, Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad4);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.X,  Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad5);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.Y,  Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad6);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.A,  Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad7);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState2, Button.B,  Settings.Action.PRESSED, Settings.Key.LOGI_WIN, Settings.Key.Numpad8);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.DL, Settings.Action.PRESSED, Settings.Key.Numpad1);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.DU, Settings.Action.PRESSED, Settings.Key.Numpad2);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.DD, Settings.Action.PRESSED, Settings.Key.Numpad3);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.DR, Settings.Action.PRESSED, Settings.Key.Numpad4);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.X,  Settings.Action.PRESSED, Settings.Key.Numpad5);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.Y,  Settings.Action.PRESSED, Settings.Key.Numpad6);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.A,  Settings.Action.PRESSED, Settings.Key.Numpad7);
-            addButtonToOneKeyPressAndReleaseMapping(macroState2, Button.B,  Settings.Action.PRESSED, Settings.Key.Numpad8);
-            
-            //left stick
-            addButtonToKeyPressMapping(macroState2, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
-
-            //right stick
-            addButtonToKeyPressMapping(macroState2, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
-
-            addButtonToKeyPressMapping(macroState2, Button.LB, Settings.Action.PRESSED, Settings.Key.RightAlt  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState2, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState2, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
-
-            settings.stateMappings.Add(macroState2);
-
-            StateControllerMapping macroState3 = new StateControllerMapping();
-            macroState3.stateName = "Macro State 3";
-
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.DL, Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad1);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.DU, Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad2);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.DD, Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad3);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.DR, Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad4);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.X,  Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad5);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.Y,  Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad6);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.A,  Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad7);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState3, Button.B,  Settings.Action.PRESSED, Settings.Key.Control, Settings.Key.Numpad8);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.DL, Settings.Action.PRESSED, Settings.Key.Numpad1);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.DU, Settings.Action.PRESSED, Settings.Key.Numpad2);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.DD, Settings.Action.PRESSED, Settings.Key.Numpad3);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.DR, Settings.Action.PRESSED, Settings.Key.Numpad4);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.X,  Settings.Action.PRESSED, Settings.Key.Numpad5);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.Y,  Settings.Action.PRESSED, Settings.Key.Numpad6);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.A,  Settings.Action.PRESSED, Settings.Key.Numpad7);
-            addButtonToOneKeyPressAndReleaseMapping(macroState3, Button.B,  Settings.Action.PRESSED, Settings.Key.Numpad8);
-            
-            //left stick
-            addButtonToKeyPressMapping(macroState3, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
-
-            //right stick
-            addButtonToKeyPressMapping(macroState3, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
-
-            addButtonToKeyPressMapping(macroState3, Button.LB, Settings.Action.PRESSED, Settings.Key.RightAlt  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState3, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState3, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
-
-            settings.stateMappings.Add(macroState3);
-
-            StateControllerMapping macroState4 = new StateControllerMapping();
-            macroState4.stateName = "Macro State 4";
-
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.DL, Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad1);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.DU, Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad2);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.DD, Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad3);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.DR, Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad4);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.X,  Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad5);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.Y,  Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad6);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.A,  Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad7);
-            // addButtonToTwoKeyPressAndReleaseMapping(macroState4, Button.B,  Settings.Action.PRESSED, Settings.Key.LOGI_MENU, Settings.Key.Numpad8);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.DL, Settings.Action.PRESSED, Settings.Key.Numpad1);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.DU, Settings.Action.PRESSED, Settings.Key.Numpad2);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.DD, Settings.Action.PRESSED, Settings.Key.Numpad3);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.DR, Settings.Action.PRESSED, Settings.Key.Numpad4);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.X,  Settings.Action.PRESSED, Settings.Key.Numpad5);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.Y,  Settings.Action.PRESSED, Settings.Key.Numpad6);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.A,  Settings.Action.PRESSED, Settings.Key.Numpad7);
-            addButtonToOneKeyPressAndReleaseMapping(macroState4, Button.B,  Settings.Action.PRESSED, Settings.Key.Numpad8);
-            
-            //left stick
-            addButtonToKeyPressMapping(macroState4, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
-
-            //right stick
-            addButtonToKeyPressMapping(macroState4, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
-
-            addButtonToKeyPressMapping(macroState4, Button.LB, Settings.Action.PRESSED, Settings.Key.RightAlt  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState4, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState4, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
-
-            settings.stateMappings.Add(macroState4);
+            addMacroState(settings, "Macro State 1");
+            addMacroState(settings, "Macro State 2");
+            addMacroState(settings, "Macro State 3");
+            addMacroState(settings, "Macro State 4");
+            addMacroState(settings, "Macro State 5");
 
             writeSettings(settings);
 
@@ -307,6 +113,7 @@ namespace FFXICompanion
             ModuleData md = ModuleData.getInstance();
             md.companionSettings = settings;
             md.cancellationToken = cts.Token;
+
 
             Mapper keyMapper = new Mapper();
             FFXICompanion.Server.HttpServer srvr = new FFXICompanion.Server.HttpServer();
@@ -331,6 +138,55 @@ namespace FFXICompanion
                 thread.Join();
             }
 
+        }
+
+        public static void addMacroState(CompanionSettings settings, String stateName) {
+            StateControllerMapping macroState = new StateControllerMapping();
+            macroState.stateName = stateName;
+
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.DL, Settings.Action.PRESSED, Settings.Key.Numpad1);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.DU, Settings.Action.PRESSED, Settings.Key.Numpad2);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.DD, Settings.Action.PRESSED, Settings.Key.Numpad3);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.DR, Settings.Action.PRESSED, Settings.Key.Numpad4);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.X,  Settings.Action.PRESSED, Settings.Key.Numpad5);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.Y,  Settings.Action.PRESSED, Settings.Key.Numpad6);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.A,  Settings.Action.PRESSED, Settings.Key.Numpad7);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.B,  Settings.Action.PRESSED, Settings.Key.Numpad8);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.BACK,  Settings.Action.PRESSED, Settings.Key.Numpad9);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.START,  Settings.Action.PRESSED, Settings.Key.Numpad0);
+            
+            //left stick
+            addButtonToKeyPressMapping(macroState, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.LSU, Settings.Action.RELEASED, Settings.Key.W, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.LSL, Settings.Action.PRESSED,  Settings.Key.A, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.LSL, Settings.Action.RELEASED, Settings.Key.A, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.LSD, Settings.Action.PRESSED,  Settings.Key.S, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.LSD, Settings.Action.RELEASED, Settings.Key.S, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.LSR, Settings.Action.PRESSED,  Settings.Key.D, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.LSR, Settings.Action.RELEASED, Settings.Key.D, Settings.Action.RELEASED);
+
+            //right stick
+            addButtonToKeyPressMapping(macroState, Button.RSU, Settings.Action.PRESSED,  Settings.Key.I, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.RSU, Settings.Action.RELEASED, Settings.Key.I, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.RSL, Settings.Action.PRESSED,  Settings.Key.J, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.RSL, Settings.Action.RELEASED, Settings.Key.J, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.RSD, Settings.Action.PRESSED,  Settings.Key.K, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.RSD, Settings.Action.RELEASED, Settings.Key.K, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
+
+            addButtonToKeyPressMapping(macroState, Button.LB, Settings.Action.PRESSED, Settings.Key.RightAlt  , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(macroState, Button.GUIDE, Settings.Action.PRESSED, Settings.Key.LeftShift, Settings.Action.PRESSED);
+            addButtonToKeyPressMapping(macroState, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(macroState, Button.GUIDE, Settings.Action.RELEASED, Settings.Key.LeftShift, Settings.Action.RELEASED);
+
+            settings.stateMappings.Add(macroState);
         }
 
         public static void addStateTransition(CompanionSettings settings, string stateName, Settings.Button button, Settings.Action action) {
