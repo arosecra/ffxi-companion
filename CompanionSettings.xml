@@ -173,10 +173,6 @@
                 <key>CommaLeftArrow</key>
                 <action>PRESSED</action>
               </KeyPress>
-              <KeyPress>
-                <key>CommaLeftArrow</key>
-                <action>RELEASED</action>
-              </KeyPress>
             </keyPresses>
           </keyPressesCommand>
         </ControllerMapping>
@@ -190,10 +186,6 @@
               <KeyPress>
                 <key>PeriodRightArrow</key>
                 <action>PRESSED</action>
-              </KeyPress>
-              <KeyPress>
-                <key>PeriodRightArrow</key>
-                <action>RELEASED</action>
               </KeyPress>
             </keyPresses>
           </keyPressesCommand>
@@ -209,10 +201,6 @@
                 <key>N</key>
                 <action>PRESSED</action>
               </KeyPress>
-              <KeyPress>
-                <key>N</key>
-                <action>RELEASED</action>
-              </KeyPress>
             </keyPresses>
           </keyPressesCommand>
         </ControllerMapping>
@@ -227,6 +215,58 @@
                 <key>M</key>
                 <action>PRESSED</action>
               </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>DL</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>CommaLeftArrow</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>DR</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>PeriodRightArrow</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>DU</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
+              <KeyPress>
+                <key>N</key>
+                <action>RELEASED</action>
+              </KeyPress>
+            </keyPresses>
+          </keyPressesCommand>
+        </ControllerMapping>
+        <ControllerMapping>
+          <button>
+            <button>DD</button>
+            <action>RELEASED</action>
+          </button>
+          <keyPressesCommand>
+            <keyPresses>
               <KeyPress>
                 <key>M</key>
                 <action>RELEASED</action>

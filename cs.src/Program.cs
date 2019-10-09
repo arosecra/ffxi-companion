@@ -45,10 +45,14 @@ namespace FFXICompanion
             addButtonToOneKeyPressAndReleaseMapping(defaultStateCM, Button.B, Settings.Action.PRESSED, Settings.Key.Escape);
             
             //d pad
-            addButtonToOneKeyPressAndReleaseMapping(defaultStateCM, Button.DL, Settings.Action.PRESSED, Settings.Key.CommaLeftArrow);
-            addButtonToOneKeyPressAndReleaseMapping(defaultStateCM, Button.DR, Settings.Action.PRESSED, Settings.Key.PeriodRightArrow);
-            addButtonToOneKeyPressAndReleaseMapping(defaultStateCM, Button.DU, Settings.Action.PRESSED, Settings.Key.N);
-            addButtonToOneKeyPressAndReleaseMapping(defaultStateCM, Button.DD, Settings.Action.PRESSED, Settings.Key.M);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DL, Settings.Action.PRESSED, Settings.Key.CommaLeftArrow,   Settings.Action.PRESSED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DR, Settings.Action.PRESSED, Settings.Key.PeriodRightArrow, Settings.Action.PRESSED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DU, Settings.Action.PRESSED, Settings.Key.N,  Settings.Action.PRESSED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DD, Settings.Action.PRESSED, Settings.Key.M,  Settings.Action.PRESSED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DL, Settings.Action.RELEASED, Settings.Key.CommaLeftArrow,  Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DR, Settings.Action.RELEASED, Settings.Key.PeriodRightArrow,  Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DU, Settings.Action.RELEASED, Settings.Key.N,  Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(defaultStateCM, Button.DD, Settings.Action.RELEASED, Settings.Key.M,  Settings.Action.RELEASED);
             
             //left stick
             addButtonToKeyPressMapping(defaultStateCM, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
