@@ -77,16 +77,7 @@ namespace FFXICompanion
             addButtonToKeyPressMapping(defaultStateCM, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
             addButtonToKeyPressMapping(defaultStateCM, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
 
-            addButtonToKeyPressMapping(defaultStateCM, Button.LB, Settings.Action.PRESSED, Settings.Key.RightAlt  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(defaultStateCM, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(defaultStateCM, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(defaultStateCM, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(defaultStateCM, Button.GUIDE, Settings.Action.PRESSED, Settings.Key.LeftShift, Settings.Action.PRESSED);
-            addButtonToKeyPressMapping(defaultStateCM, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(defaultStateCM, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(defaultStateCM, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(defaultStateCM, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(defaultStateCM, Button.GUIDE, Settings.Action.RELEASED, Settings.Key.LeftShift, Settings.Action.RELEASED);
+            createControlKeyButtonMappings(defaultStateCM);
 
             settings.stateMappings.Add(defaultStateCM);
 
@@ -126,9 +117,9 @@ namespace FFXICompanion
 
             List<Thread> threads = new List<Thread>();
             threads.Add(new Thread(new ThreadStart(keyMapper.start)));
-            threads.Add(new Thread(new ThreadStart(srvr.start)));
-            threads.Add(new Thread(new ThreadStart(sock.start)));
-            threads.Add(new Thread(new ThreadStart(pipeServer.start)));
+            // threads.Add(new Thread(new ThreadStart(srvr.start)));
+            // threads.Add(new Thread(new ThreadStart(sock.start)));
+            // threads.Add(new Thread(new ThreadStart(pipeServer.start)));
 
             foreach(Thread thread in threads) {
                 thread.Start();
@@ -144,6 +135,20 @@ namespace FFXICompanion
 
         }
 
+        public static void createControlKeyButtonMappings(StateControllerMapping mapping)
+        {
+            addButtonToKeyPressMapping(mapping, Button.LB, Settings.Action.PRESSED, Settings.Key.LeftShift  , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(mapping, Button.LT, Settings.Action.PRESSED, Settings.Key.Control  , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(mapping, Button.RB, Settings.Action.PRESSED, Settings.Key.LOGI_WIN   , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(mapping, Button.RT, Settings.Action.PRESSED, Settings.Key.LeftAlt , Settings.Action.PRESSED );
+            addButtonToKeyPressMapping(mapping, Button.GUIDE, Settings.Action.PRESSED, Settings.Key.RightAlt, Settings.Action.PRESSED);
+            addButtonToKeyPressMapping(mapping, Button.LB, Settings.Action.RELEASED, Settings.Key.LeftShift , Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(mapping, Button.LT, Settings.Action.RELEASED, Settings.Key.Control , Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(mapping, Button.RB, Settings.Action.RELEASED, Settings.Key.LOGI_WIN  , Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(mapping, Button.RT, Settings.Action.RELEASED, Settings.Key.LeftAlt, Settings.Action.RELEASED);
+            addButtonToKeyPressMapping(mapping, Button.GUIDE, Settings.Action.RELEASED, Settings.Key.RightAlt, Settings.Action.RELEASED);
+        }
+
         public static void addMacroState(CompanionSettings settings, String stateName) {
             StateControllerMapping macroState = new StateControllerMapping();
             macroState.stateName = stateName;
@@ -157,7 +162,7 @@ namespace FFXICompanion
             addButtonToOneKeyPressAndReleaseMapping(macroState, Button.A,  Settings.Action.PRESSED, Settings.Key.Numpad7);
             addButtonToOneKeyPressAndReleaseMapping(macroState, Button.B,  Settings.Action.PRESSED, Settings.Key.Numpad8);
             addButtonToOneKeyPressAndReleaseMapping(macroState, Button.BACK,  Settings.Action.PRESSED, Settings.Key.Numpad9);
-            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.START,  Settings.Action.PRESSED, Settings.Key.Numpad0);
+            addButtonToOneKeyPressAndReleaseMapping(macroState, Button.START, Settings.Action.PRESSED, Settings.Key.Numpad0);
             
             //left stick
             addButtonToKeyPressMapping(macroState, Button.LSU, Settings.Action.PRESSED,  Settings.Key.W, Settings.Action.PRESSED );
@@ -179,16 +184,7 @@ namespace FFXICompanion
             addButtonToKeyPressMapping(macroState, Button.RSR, Settings.Action.PRESSED,  Settings.Key.L, Settings.Action.PRESSED );
             addButtonToKeyPressMapping(macroState, Button.RSR, Settings.Action.RELEASED, Settings.Key.L, Settings.Action.RELEASED);
 
-            addButtonToKeyPressMapping(macroState, Button.LB, Settings.Action.PRESSED, Settings.Key.RightAlt  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState, Button.LT, Settings.Action.PRESSED, Settings.Key.LOGI_WIN  , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState, Button.RB, Settings.Action.PRESSED, Settings.Key.Control   , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState, Button.RT, Settings.Action.PRESSED, Settings.Key.LOGI_MENU , Settings.Action.PRESSED );
-            addButtonToKeyPressMapping(macroState, Button.GUIDE, Settings.Action.PRESSED, Settings.Key.LeftShift, Settings.Action.PRESSED);
-            addButtonToKeyPressMapping(macroState, Button.LB, Settings.Action.RELEASED, Settings.Key.RightAlt , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState, Button.LT, Settings.Action.RELEASED, Settings.Key.LOGI_WIN , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState, Button.RB, Settings.Action.RELEASED, Settings.Key.Control  , Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState, Button.RT, Settings.Action.RELEASED, Settings.Key.LOGI_MENU, Settings.Action.RELEASED);
-            addButtonToKeyPressMapping(macroState, Button.GUIDE, Settings.Action.RELEASED, Settings.Key.LeftShift, Settings.Action.RELEASED);
+            createControlKeyButtonMappings(macroState);
 
             settings.stateMappings.Add(macroState);
         }

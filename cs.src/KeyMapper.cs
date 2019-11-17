@@ -23,6 +23,14 @@ namespace FFXICompanion.KeyMapper
         {
             this.deviceContext = ManagedWrapper.CreateContext();
         }
+        
+        // public static void GetVidPid(string str, ref int vid, ref int pid)
+        // {
+        //     var matches = Regex.Matches(str, @"VID_(\w{4})&PID_(\w{4})");
+        //     if (matches.Count <= 0 || matches[0].Groups.Count <= 1) return;
+        //     vid = Convert.ToInt32(matches[0].Groups[1].Value, 16);
+        //     pid = Convert.ToInt32(matches[0].Groups[2].Value, 16);
+        // }
 
         public void start()
         {
@@ -46,13 +54,31 @@ namespace FFXICompanion.KeyMapper
             // }
             // ManagedWrapper.SetFilter(deviceContext, ManagedWrapper.IsKeyboard, ManagedWrapper.Filter.None);
 
+            // var ret = new List<DeviceInfo>();
+            for (var i = 1; i < 21; i++)
+            {
+                var handle = ManagedWrapper.GetHardwareStr(deviceContext, i, 1000);
+                if (handle == "") continue;
+                // int foundVid = 0, foundPid = 0;
+                // GetVidPid(handle, ref foundVid, ref foundPid);
+                //if (foundVid == 0 || foundPid == 0) continue;
+                Console.WriteLine(i + " " + handle);
+                // ret.Add(new DeviceInfo {Id = i, IsMouse = i > 10, Handle = handle});
+            }
 
-            var controllers = new[] { new Controller(UserIndex.One), new Controller(UserIndex.Two), new Controller(UserIndex.Three), new Controller(UserIndex.Four) };
+            // foreach (var device in ret)
+            // {
+            //     Console.WriteLine(device);
+            // }
+
+
+            var controllers = new[] { new Controller(), new Controller(UserIndex.One), new Controller(UserIndex.Two), new Controller(UserIndex.Three), new Controller(UserIndex.Four) };
 
             // Get 1st controller available
-            Controller controller = null;
+            Controller controller = controllers[0];
             foreach (var selectControler in controllers)
             {
+                Console.WriteLine(selectControler);
                 if (selectControler.IsConnected)
                 {
                     controller = selectControler;
@@ -62,7 +88,7 @@ namespace FFXICompanion.KeyMapper
 
             if (controller == null)
             {
-                // Console.WriteLine("No XInput controller installed");
+                Console.WriteLine("No XInput controller installed");
             }
             else
             {
@@ -132,7 +158,7 @@ namespace FFXICompanion.KeyMapper
                         stroke.key.state = (ushort)ManagedWrapper.KeyState.Down;
                     else
                         stroke.key.state = (ushort)ManagedWrapper.KeyState.Up;
-                    int devId = 1;
+                    int devId = 4;
                     Console.WriteLine(stroke.key.code + " " + kp.action);
                     ManagedWrapper.Send(deviceContext, devId, ref stroke, 1);
                     System.Threading.Thread.Sleep(10);

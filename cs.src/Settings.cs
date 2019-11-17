@@ -158,7 +158,7 @@ namespace FFXICompanion.Settings {
         PeriodRightArrow = 52,
         ForwardSlashQuestionMark = 53,
         RightShift = 54,
-        RightAlt = 56,
+        LeftAlt = 56,
         Space = 57,
         CapsLock = 58,
         F1 = 59,
@@ -204,7 +204,7 @@ namespace FFXICompanion.Settings {
         NumpadEnter = 28,
         NumpadPlus = 78,
         NumpadMinus = 74,
-
+        RightAlt = 184,
         LOGI_MENU = 221,
         LOGI_WIN = 219
     }
