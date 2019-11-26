@@ -2,6 +2,7 @@
 using FFXICompanion.Settings;
 using FFXICompanion;
 using System;
+using System.Text;
 using System.Threading;
 using System.Collections.Generic;
 using Core_Interception.Lib;
@@ -62,7 +63,7 @@ namespace FFXICompanion.KeyMapper
                 // int foundVid = 0, foundPid = 0;
                 // GetVidPid(handle, ref foundVid, ref foundPid);
                 //if (foundVid == 0 || foundPid == 0) continue;
-                Console.WriteLine(i + " " + handle);
+                // Console.WriteLine(i + " " + handle);
                 // ret.Add(new DeviceInfo {Id = i, IsMouse = i > 10, Handle = handle});
             }
 
@@ -78,7 +79,7 @@ namespace FFXICompanion.KeyMapper
             Controller controller = controllers[0];
             foreach (var selectControler in controllers)
             {
-                Console.WriteLine(selectControler);
+                // Console.WriteLine(selectControler);
                 if (selectControler.IsConnected)
                 {
                     controller = selectControler;
@@ -100,6 +101,8 @@ namespace FFXICompanion.KeyMapper
                 SharpDX.XInput.State previousControllerState = controller.GetState();
                 Dictionary<Button, bool> lastSimpleGamepadState = determineSimpleButtonState(previousControllerState);
 
+                StateTransition lastState = null;
+
                 while (!ModuleData.getInstance().cancellationToken.IsCancellationRequested)
                 {
                     if(controller.IsConnected) {
@@ -111,12 +114,29 @@ namespace FFXICompanion.KeyMapper
                         Dictionary<Button, bool> simpleGamepadState = determineSimpleButtonState(controllerState);
                         Dictionary<Button, Settings.Action> changedState = determineStateDifferences(lastSimpleGamepadState, simpleGamepadState);
                         printStateChanges(changedState);
+                        // Console.WriteLine(GetActiveWindowTitle());
 
                         //determine if we are transitioning to a new 'state'
                         //  this is based on the current state, the game state and the keys pressed/not pressed
                         //  NOTE: the first state wins, for speed
-                        string newState = getNewStateName(simpleGamepadState, ModuleData.getInstance().companionSettings.stateTransitions);
-
+                        StateTransition newState = getNewState(simpleGamepadState, ModuleData.getInstance().companionSettings.stateTransitions);
+                        if(newState == null && lastState == null)
+                        {
+                            //nothing to do
+                        } 
+                        else if(newState != null && lastState == null)
+                        {
+                            activateState(newState);
+                        }
+                        else if(newState == null && lastState != null)
+                        {
+                            deactivateState(lastState);
+                        }
+                        else if(newState != null && lastState != null && !newState.transitionName.Equals(lastState.transitionName))
+                        {
+                            deactivateState(lastState);
+                            activateState(newState);
+                        }
 
                         //now that we have the state name determined, load the correct mappings
                         StateControllerMapping stateControllerMappings = findStateControllerMappings(newState, ModuleData.getInstance().companionSettings.stateMappings);
@@ -135,7 +155,7 @@ namespace FFXICompanion.KeyMapper
                             }
                         }
 
-
+                        lastState = newState;
                         lastSimpleGamepadState = simpleGamepadState;
                     }
                     Thread.Sleep(10);
@@ -146,23 +166,63 @@ namespace FFXICompanion.KeyMapper
             }
         }
 
+        private void deactivateState(StateTransition transition)
+        {
+            Console.WriteLine("Deactivating state " + transition.stateName + " using transition " + transition.transitionName);
+            if(transition.key != Settings.Key.NULL)
+                handleKeyPress(new KeyPress(transition.key, Settings.Action.RELEASED)); 
+         
+        }
+
+        private void activateState(StateTransition transition)
+        {
+            Console.WriteLine("Activating state " + transition.stateName + " using transition " + transition.transitionName);
+            if(transition.key != Settings.Key.NULL)
+                handleKeyPress(new KeyPress(transition.key, Settings.Action.PRESSED));
+        }
+
+        [DllImport("user32.dll")]
+        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+        private string GetActiveWindowTitle()
+        {
+            const int nChars = 256;
+            StringBuilder Buff = new StringBuilder(nChars);
+            IntPtr handle = WinApi.User32.User32Methods.GetForegroundWindow();
+
+            if (WinApi.User32.User32Methods.GetWindowText(handle, Buff, nChars) > 0)
+            {
+                return Buff.ToString();
+            }
+            return null;
+        }
+
+        private void handleKeyPressesCommand(KeyPressesCommand command)
+        {
+            foreach (KeyPress kp in command.keyPresses)
+            {
+                handleKeyPress(kp);
+            }
+        }
+
+        private void handleKeyPress(KeyPress kp)
+        {
+            var stroke = new ManagedWrapper.Stroke();
+            stroke.key.code = (ushort)kp.key;
+            if (kp.action == Settings.Action.PRESSED)
+                stroke.key.state = (ushort)ManagedWrapper.KeyState.Down;
+            else
+                stroke.key.state = (ushort)ManagedWrapper.KeyState.Up;
+            int devId = 4;
+            // Console.WriteLine(stroke.key.code + " " + kp.action);
+            ManagedWrapper.Send(deviceContext, devId, ref stroke, 1);
+            System.Threading.Thread.Sleep(10);
+        }
+
         private void handleCommand(ControllerMapping mapping)
         {
             if (mapping.keyPressesCommand != null)
             {
-                foreach (KeyPress kp in mapping.keyPressesCommand.keyPresses)
-                {
-                    var stroke = new ManagedWrapper.Stroke();
-                    stroke.key.code = (ushort)kp.key;
-                    if (kp.action == Settings.Action.PRESSED)
-                        stroke.key.state = (ushort)ManagedWrapper.KeyState.Down;
-                    else
-                        stroke.key.state = (ushort)ManagedWrapper.KeyState.Up;
-                    int devId = 4;
-                    Console.WriteLine(stroke.key.code + " " + kp.action);
-                    ManagedWrapper.Send(deviceContext, devId, ref stroke, 1);
-                    System.Threading.Thread.Sleep(10);
-                }
+                handleKeyPressesCommand(mapping.keyPressesCommand);
             } else if (mapping.altTabCommand != null) {
 
                 
@@ -227,21 +287,31 @@ namespace FFXICompanion.KeyMapper
             }
         }
 
-        private StateControllerMapping findStateControllerMappings(string newState, List<StateControllerMapping> stateMappings)
+        private StateControllerMapping findStateControllerMappings(StateTransition stateTransition, List<StateControllerMapping> stateMappings)
         {
             StateControllerMapping mapping = null;
-
-            foreach (StateControllerMapping current in stateMappings)
+            if(stateTransition == null)
             {
-                if (mapping == null && current.stateName == "Default")
+                foreach (StateControllerMapping current in stateMappings)
                 {
-                    mapping = current;
-                }
-                if (current.stateName == newState)
-                {
-                    mapping = current;
+                    if (current.stateName == "Default")
+                    {
+                        mapping = current;
+                        break;
+                    }
                 }
             }
+            else
+            {
+                foreach (StateControllerMapping current in stateMappings)
+                {
+                    if (current.stateName == stateTransition.stateName)
+                    {
+                        mapping = current;
+                    }
+                }
+            }
+
             return mapping;
         }
 
@@ -277,6 +347,9 @@ namespace FFXICompanion.KeyMapper
 
         [DllImport("xinput1_3.dll", EntryPoint = "#100")]
         static extern int secret_get_gamepad(int playerIndex, out XINPUT_GAMEPAD_SECRET struc);
+
+        [DllImport("xinput1_3.dll")]
+        static extern int XInputGetState(int playerIndex, out XINPUT_GAMEPAD_SECRET struc);
 
         public struct XINPUT_GAMEPAD_SECRET
         {
@@ -319,10 +392,13 @@ namespace FFXICompanion.KeyMapper
             setTriggerButtonState(result, Button.RT, (float)controllerState.Gamepad.RightTrigger);
 
             int stat = secret_get_gamepad(0, out xgs);
+            // Console.WriteLine(xgs.wButtons);
             if (stat == 0) {
                 bool value = ((xgs.wButtons & 0x0400) != 0);
                 setButtonState(result, Button.GUIDE, value);
             }
+
+            
 
             return result;
         }
@@ -371,9 +447,9 @@ namespace FFXICompanion.KeyMapper
             simpleButtonState.Add(key, value);
         }
 
-        private string getNewStateName(Dictionary<Button, bool> simpleGamepadState, List<StateTransition> stateTransitions)
+        private StateTransition getNewState(Dictionary<Button, bool> simpleGamepadState, List<StateTransition> stateTransitions)
         {
-            string result = "Default";
+            StateTransition result = null;
 
             foreach (StateTransition stateTransition in stateTransitions)
             {
@@ -386,10 +462,15 @@ namespace FFXICompanion.KeyMapper
                     if(!simpleGamepadState[key] && transitionButton.action == Settings.Action.RELEASED)
                         matchedButtons++;
                 }
-                if(matchedButtons == stateTransition.transitionButtons.Count) {
-                    result = stateTransition.stateName;
-                    // Console.WriteLine("Changing state to " + result);
-                    break;
+                // Console.WriteLine("State " + stateTransition.stateName + " transition " + stateTransition.transitionName + " matched: " + matchedButtons);
+                if( matchedButtons == stateTransition.transitionButtons.Count)
+                {
+                    if(result == null || 
+                        (result != null && result.transitionButtons.Count < stateTransition.transitionButtons.Count))
+                    {
+                
+                    result = stateTransition;
+                    }
                 }
             }
 

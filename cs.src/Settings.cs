@@ -30,7 +30,9 @@ namespace FFXICompanion.Settings {
     [Serializable()]	
     public class StateTransition {
         public string stateName {get; set;}
+        public string transitionName {get; set;}
         public List<ControllerButton> transitionButtons = new List<ControllerButton>();
+        public Key key;
     }
 
     public class StateControllerMapping {
@@ -104,6 +106,7 @@ namespace FFXICompanion.Settings {
 
    public enum Key : ushort
     {
+        NULL = ushort.MaxValue,
         Escape = 1,
         One = 2,
         Two = 3,
@@ -206,6 +209,7 @@ namespace FFXICompanion.Settings {
         NumpadMinus = 74,
         RightAlt = 184,
         LOGI_MENU = 221,
-        LOGI_WIN = 219
+        LOGI_WIN = 219,
+        RightControl = 157
     }
 }

@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -11,6 +12,8 @@
   </PropertyGroup>
 
 <ItemGroup>
+  <PackageReference Include="Hid.Net" Version="3.1.0" />
+  <PackageReference Include="HidApiAdapter" Version="1.0.5" />
   <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
   <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
   <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
@@ -18,8 +21,10 @@
   <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
   <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
   <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
+  <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
 
   <PackageReference Include="SharpDX.XInput" Version="4.2.0" />
+
   <PackageReference Include="WinApi" Version="4.0.0" />
   <Reference Include="Core_Interception">
     <HintPath>lib\Core_Interception.dll</HintPath>
@@ -52,8 +57,8 @@
   <Copy SourceFiles="CompanionSettings.xml" DestinationFolder="$(OutDir)" />
 </Target>
 
-<Target Name="MyPreCompileTarget" BeforeTargets="Build">
+<!-- <Target Name="MyPreCompileTarget" BeforeTargets="Build">
   <Exec Command="ng build" />
-</Target>
+</Target> -->
 
 </Project>
