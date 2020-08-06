@@ -226,13 +226,18 @@ namespace FFXICompanion.KeyMapper
             } else if (mapping.altTabCommand != null) {
 
                 
-                // List<Process> polProcesses = new List<Process>();
-                // foreach (Process process in Process.GetProcesses())
-                // {
-                //     if(process.ProcessName == "pol") {
-                //         polProcesses.Add(process);
-                //     }
-                // }
+                //List<Process> polProcesses = new List<Process>();
+                //foreach (Process process in Process.GetProcesses())
+               // {
+                //    if(process.ProcessName == "pol") {
+                 //       polProcesses.Add(process);
+                //    }
+                //}
+                //IntPtr s = polProcesses[0].MainWindowHandle;
+                //Console.WriteLine(polProcesses[0].MainWindowTitle);
+                
+                //WinApi.User32.User32Methods.ShowWindow(s, WinApi.User32.ShowWindowCommands.SW_SHOWMINIMIZED  );
+                //WinApi.User32.User32Methods.ShowWindow(s, WinApi.User32.ShowWindowCommands.SW_SHOWNORMAL  );
 
                 // IntPtr activeWindow = WinApi.User32.User32Methods.GetForegroundWindow();
                 // int currentIndex = -1;

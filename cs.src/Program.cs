@@ -49,8 +49,8 @@ namespace FFXICompanion
             addStateTransition(settings, "Macro State", "3", FFXICompanion.Settings.Button.LT, Settings.Key.LOGI_WIN);
             addStateTransition(settings, "Macro State", "4", FFXICompanion.Settings.Button.RB, Settings.Key.LeftAlt);
             addStateTransition(settings, "Macro State", "5", FFXICompanion.Settings.Button.RT, Settings.Key.RightAlt);
-            addTwoButtonStateTransition(settings, "Macro State", "6", FFXICompanion.Settings.Button.LB, FFXICompanion.Settings.Button.LT, Settings.Key.LOGI_MENU);
-            addTwoButtonStateTransition(settings, "Macro State", "7", FFXICompanion.Settings.Button.RB, FFXICompanion.Settings.Button.RT, Settings.Key.RightControl);
+            addTwoButtonStateTransition(settings, "Macro State", "6", FFXICompanion.Settings.Button.LB, FFXICompanion.Settings.Button.RB, Settings.Key.LOGI_MENU);
+            addTwoButtonStateTransition(settings, "Macro State", "7", FFXICompanion.Settings.Button.LT, FFXICompanion.Settings.Button.RT, Settings.Key.RightControl);
 
             StateControllerMapping defaultStateCM = new StateControllerMapping();
             defaultStateCM.stateName = "Default";

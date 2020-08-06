@@ -86,7 +86,7 @@
           <action>PRESSED</action>
         </ControllerButton>
         <ControllerButton>
-          <button>LT</button>
+          <button>RB</button>
           <action>PRESSED</action>
         </ControllerButton>
       </transitionButtons>
@@ -97,7 +97,7 @@
     <StateTransition>
       <transitionButtons>
         <ControllerButton>
-          <button>RB</button>
+          <button>LT</button>
           <action>PRESSED</action>
         </ControllerButton>
         <ControllerButton>
